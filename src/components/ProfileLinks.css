@@ -59,3 +59,82 @@
   opacity: 1;
   transform: translateY(0) scale(1);
 }
+
+/* Full profile links in the navbar */
+.profile-links--navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(9px, 0.8vw, 14px);
+  flex-shrink: 0;
+}
+
+.profile-links--navbar .profile-link-btn {
+  width: 23px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-links--navbar .profile-link-icon {
+  width: 19px;
+  height: 19px;
+}
+
+.profile-links--navbar .profile-link-tooltip {
+  top: calc(100% + 8px);
+  z-index: 600;
+}
+
+/* Better visibility without hovering */
+.profile-links--navbar .profile-link-btn {
+  filter: none;
+}
+
+.profile-links--navbar .profile-link-btn:hover {
+  z-index: 2;
+}
+
+@media (max-width: 1250px) {
+  .profile-links--navbar {
+    gap: 8px;
+  }
+
+  .profile-links--navbar .profile-link-icon {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+/* FIX: Show all six profile icons in the desktop navbar */
+@media (min-width: 1081px) {
+  .navbar .profile-links.profile-links--navbar {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 12px;
+    width: auto;
+    overflow: visible;
+  }
+
+  .navbar .profile-links--navbar .profile-link-btn,
+  .navbar .profile-links--navbar .profile-link-btn:nth-child(n + 3) {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    flex: 0 0 22px;
+    width: 22px;
+    height: 30px;
+  }
+
+  .navbar .profile-links--navbar .profile-link-icon {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 20px;
+    height: 20px;
+  }
+}

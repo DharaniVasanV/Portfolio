@@ -65,7 +65,12 @@ export default function ProfileLinks({ variant = 'navbar' }) {
           className="profile-link-btn"
           title={p.label}
           onHoverStart={() => playDataClick()} // Ultra-short UI blip sound mapped directly per prompt
-          initial={{ color: 'rgba(255,255,255,0.35)' }}
+          initial={{
+              color:
+                variant === 'navbar'
+                  ? 'rgba(255,255,255,0.72)'
+                  : 'rgba(255,255,255,0.35)',
+          }}
           whileHover={{
             scale: 1.25,
             color: p.hoverHex,
