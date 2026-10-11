@@ -1,0 +1,61 @@
+.profile-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.profile-links--navbar {
+  gap: 1.1rem;
+}
+
+.profile-links--footer {
+  justify-content: center;
+  margin: 1.5rem 0;
+  gap: 1.8rem;
+}
+
+.profile-link-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.35); /* Base low-intensity */
+  text-decoration: none;
+  cursor: crosshair;
+  transform-origin: center;
+}
+
+.profile-link-icon {
+  width: 22px;
+  height: 22px;
+  transition: opacity 0.2s ease;
+}
+
+.profile-links--footer .profile-link-icon {
+  width: 26px;
+  height: 26px;
+}
+
+/* Tooltip */
+.profile-link-tooltip {
+  position: absolute;
+  top: -30px;
+  background: rgba(0, 0, 0, 0.85);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px) scale(0.9);
+  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.profile-link-btn:hover .profile-link-tooltip {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}

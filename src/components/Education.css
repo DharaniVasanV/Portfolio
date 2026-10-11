@@ -1,0 +1,172 @@
+.edu-timeline {
+  position: relative;
+  padding-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Vertical line */
+.edu-line {
+  position: absolute;
+  left: 0.9rem;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: rgba(255,42,42,0.15);
+}
+
+.edu-line-progress {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #FF2A2A, #8B0000, transparent);
+  box-shadow: 0 0 8px rgba(255,42,42,0.4);
+}
+
+/* Timeline dot */
+.edu-node {
+  position: relative;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.edu-dot {
+  position: absolute;
+  left: -2.6rem;
+  top: 1.5rem;
+  width: 20px; height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edu-dot-inner {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #8B0000;
+  border: 2px solid rgba(255,42,42,0.4);
+  transition: all 0.3s;
+}
+
+.edu-node--active .edu-dot-inner {
+  background: #FF2A2A;
+  border-color: #FF2A2A;
+  box-shadow: 0 0 12px #FF2A2A;
+}
+
+.edu-dot-pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid #FF2A2A;
+  opacity: 0.6;
+  animation: pulseExpand 2s ease-out infinite;
+}
+
+@keyframes pulseExpand {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* Card */
+.edu-card {
+  flex: 1;
+  cursor: default;
+}
+
+.edu-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.edu-level {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: #FF2A2A;
+  margin-bottom: 0.2rem;
+}
+
+.edu-period {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.edu-active-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: #000;
+  background: #FF2A2A;
+  padding: 2px 8px;
+  border-radius: 100px;
+  animation: breathe 2s ease-in-out infinite;
+}
+
+.edu-institution {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.edu-degree {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 1.25rem;
+}
+
+.edu-grade-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.edu-grade-display {
+  display: flex;
+  flex-direction: column;
+  min-width: 90px;
+}
+
+.edu-grade-value {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #FF2A2A;
+  text-shadow: 0 0 10px rgba(255,42,42,0.5);
+}
+
+.edu-grade-label {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.35);
+  font-family: 'JetBrains Mono', monospace;
+  margin-top: 2px;
+}
+
+.edu-grade-bar-wrap {
+  flex: 1;
+  height: 4px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.edu-grade-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #8B0000, #FF2A2A);
+  box-shadow: 0 0 8px rgba(255,42,42,0.6);
+  border-radius: 2px;
+  transition: width 1s ease 0.3s;
+}
+
+@media (max-width: 600px) {
+  .edu-timeline { padding-left: 2rem; }
+  .edu-grade-row { flex-direction: column; align-items: flex-start; }
+}

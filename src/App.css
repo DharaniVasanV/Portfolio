@@ -1,0 +1,84 @@
+.main-site {
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.5s ease;
+}
+
+.main-site.hidden { opacity: 0; pointer-events: none; }
+.main-site.visible { opacity: 1; }
+
+/* ── Section alternating accents ── */
+#education { background: rgba(255,42,42,0.015); }
+#metrics { background: rgba(255,42,42,0.015); }
+
+/* ── Footer ── */
+.site-footer {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 0;
+  border-top: 1px solid rgba(255,42,42,0.15);
+  margin-top: 4rem;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-dv {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #FF2A2A;
+  text-shadow: 0 0 10px rgba(255,42,42,0.5);
+}
+
+.footer-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.4);
+}
+
+.footer-copy {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.08em;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: rgba(255,42,42,0.6);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.footer-link:hover { color: #FF2A2A; }
+
+@media (max-width: 768px) {
+  .footer-inner { flex-direction: column; text-align: center; }
+}
